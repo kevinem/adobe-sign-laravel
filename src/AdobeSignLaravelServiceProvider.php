@@ -35,9 +35,15 @@ class AdobeSignLaravelServiceProvider extends ServiceProvider
 
         $provider = new \KevinEm\OAuth2\Client\AdobeSign($this->app['config']['adobe-sign']);
 
-        $this->app->bind('adobe-sign-laravel', function () use ($provider) {
-            return new AdobeSign($provider);
-        });
+        $this->app->bind('adobe-sign-laravel', $this->createAdobeSignLaravelClosure($provider));
     }
 
+    /**
+     * @param \KevinEm\OAuth2\Client\AdobeSign $provider
+     * @return AdobeSign
+     */
+    protected function createAdobeSignLaravelClosure(\KevinEm\OAuth2\Client\AdobeSign $provider)
+    {
+        return new AdobeSign($provider);
+    }
 }

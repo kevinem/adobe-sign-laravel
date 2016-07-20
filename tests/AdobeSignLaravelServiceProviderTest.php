@@ -6,6 +6,7 @@ namespace KevinEm\AdobeSignLaravel\Tests;
 
 use ArrayAccess;
 use KevinEm\AdobeSignLaravel\AdobeSignLaravelServiceProvider;
+use KevinEm\AdobeSignLaravel\Facades\AdobeSignLaravel;
 use Mockery as m;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
@@ -55,5 +56,11 @@ class AdobeSignLaravelServiceProviderTest extends TestCase
         $this->config->shouldReceive('offsetGet')->zeroOrMoreTimes()->with('adobe-sign')->andReturn([]);
 
         $this->provider->register();
+    }
+
+    public function testFacade()
+    {
+        $facade = new AdobeSignLaravel();
+        $facade->shouldReceive();
     }
 }
