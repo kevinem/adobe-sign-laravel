@@ -2,11 +2,11 @@
 
 return [
 
-    'client_id' => '',
+    'clientId' => '',
 
-    'client_secret' => '',
+    'clientSecret' => '',
 
-    'redirect_uri' => '',
+    'redirectUri' => '',
 
     'scope' => [
 
