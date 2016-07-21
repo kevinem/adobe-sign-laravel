@@ -5,11 +5,14 @@ namespace KevinEm\AdobeSignLaravel\Tests;
 
 
 use ArrayAccess;
+use Closure;
 use KevinEm\AdobeSignLaravel\AdobeSignLaravelServiceProvider;
 use KevinEm\AdobeSignLaravel\Facades\AdobeSignLaravel;
 use Mockery as m;
 use Mockery\MockInterface;
 use PHPUnit\Framework\TestCase;
+use ReflectionClass;
+use ReflectionMethod;
 
 class AdobeSignLaravelServiceProviderTest extends TestCase
 {
@@ -62,5 +65,35 @@ class AdobeSignLaravelServiceProviderTest extends TestCase
     {
         $facade = new AdobeSignLaravel();
         $facade->shouldReceive();
+    }
+
+    public function testCreateAdobeSignLaravelClosure()
+    {
+        $method = self::getMethod('createAdobeSignLaravelClosure');
+
+        $app = [
+            'config' => $this->config
+        ];
+
+        $this->config->shouldReceive('offsetGet')->andReturn([]);
+
+        $closure = $method->invokeArgs($this->provider, []);
+
+        $this->assertInstanceOf(Closure::class, $closure);
+        $this->assertNotNull($closure($app));
+    }
+
+    /**
+     * @param string $name
+     *
+     * @return ReflectionMethod
+     */
+    protected static function getMethod($name)
+    {
+        $class = new ReflectionClass(AdobeSignLaravelServiceProvider::class);
+        $method = $class->getMethod($name);
+        $method->setAccessible(true);
+
+        return $method;
     }
 }
