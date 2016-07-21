@@ -7,6 +7,10 @@ namespace KevinEm\AdobeSignLaravel;
 use Illuminate\Support\ServiceProvider;
 use KevinEm\AdobeSign\AdobeSign;
 
+/**
+ * Class AdobeSignLaravelServiceProvider
+ * @package KevinEm\AdobeSignLaravel
+ */
 class AdobeSignLaravelServiceProvider extends ServiceProvider
 {
 
