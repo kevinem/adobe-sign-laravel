@@ -50,11 +50,52 @@ $ php artisan vendor:publish
 ## Example Usage
 
 ```php
-$clients = PlacesScoutLaravel::clients()->lists();
+AdobeSignLaravel::getAgreements([
+    query: 'apples',
+]);
 
-$rankingReports = PlacesScoutLaravel::rankingReports()->lists();
+AdobeSignLaravel::createAgreement([
+     'documentCreationInfo' => [
+         'fileInfos' => [
+             'libraryDocumentId' => 'adobe_sign_contract_id'
+         ],
+         'name' => 'Default Contract',
+         'signatureType' => 'ESIGN',
+         'recipientSetInfos' => [
+             'recipientSetMemberInfos' => [
+                 'email' => 'email@gmail.com'
+             ],
+             'recipientSetRole' => [
+                 'SIGNER'
+             ]
+         ],
+         'mergeFieldInfo' => [
+             [
+                 'fieldName' => 'AddressStreet1',
+                 'defaultValue' => ''
+             ],
+             [
+                 'fieldName' => 'AddressStreet2',
+                 'defaultValue' => ''
+             ],
+             [
+                 'fieldName' => 'AddressCity',
+                 'defaultValue' => ''
+             ],
+             [
+                 'fieldName' => 'AddressState',
+                 'defaultValue' => ''
+             ],
+             [
+                 'fieldName' => 'AddressPostal',
+                 'defaultValue' => ''
+             ],
+         ],
+         'signatureFlow' => 'SENDER_SIGNATURE_NOT_REQUIRED'
+     ]
+ ]);
 
-$run = PlacesScoutLaravel::rankingReports()->getRun('7Qs0xGHWuE', '53mM466');
+ AdobeSignLaravel::deleteAgreement('agreement_id');
 ```
 
 ## License 
