@@ -2,8 +2,8 @@
 
 https://acrobat.adobe.com/us/en/sign.html
 
-[![Latest Stable Version](https://poser.pugx.org/kevinem/adobe-sign-php/v/stable?format=flat-square)](https://packagist.org/packages/kevinem/adobe-sign-php)
-[![License](https://poser.pugx.org/kevinem/adobe-sign-php/license?format=flat-square)](https://packagist.org/packages/kevinem/adobe-sign-php)
+[![Latest Stable Version](https://poser.pugx.org/kevinem/adobe-sign-laravel/v/stable?format=flat-square)](https://packagist.org/packages/kevinem/adobe-sign-laravel)
+[![License](https://poser.pugx.org/kevinem/adobe-sign-laravel/license?format=flat-square)](https://packagist.org/packages/kevinem/adobe-sign-laravel)
 [![Build Status](https://travis-ci.org/kevinem/adobe-sign-laravel.svg?branch=master)](https://travis-ci.org/kevinem/adobe-sign-laravel)
 
 ## Installation
