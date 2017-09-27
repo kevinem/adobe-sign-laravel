@@ -3,7 +3,7 @@
   "description": "Adobe Sign Client for Laravel 5",
   "require": {
     "php": ">=5.5.0",
-    "kevinem/adobe-sign-php": "^0.1.0",
+    "kevinem/adobe-sign-php": "^0.2.0",
     "illuminate/support": "^5.2"
   },
   "require-dev": {
